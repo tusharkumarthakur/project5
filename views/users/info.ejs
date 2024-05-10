@@ -1,15 +1,16 @@
 <% layout("/layouts/boilerplate.ejs") -%>
 
     <body>
-<h2>Your All Blogs</h2>
-<h4><a href="/blog/linked/account/<%= curUser._id %>">details</a></h4>
-<h4><a href="/lol"> change password</a></h4>
+<center><h2>Profile</h2></center>
+<h4 ><a style="text-decoration: none; color: pink; margin-left: 1rem;" href="/blog/linked/account/<%= curUser._id %>"><i style="text-decoration: underline; color: white;">User info</i> <i class="fa-solid fa-info"></i> </a></h4>
+<!-- <h4><a href="/lol"> change password</a></h4> -->
 <p>
-    <div class="ms-auto">
+    <div class="ms-auto mt-2">
         
-            <div class="container-fluid">
+            <div class="container-fluid "  style="display: flex; justify-content: right;">
                 <form class="d-flex" role="search" action="/user/search/username" method="get">
-                    <input class="form-control-sm me-2  color-white" name="search" type="search" placeholder="Search User"
+                    <label  for="finding" class="login-color">Search user: &nbsp;</label>
+                    <input class="form-control-sm me-2 color-white" id="finding" name="search" type="search" placeholder="Search User"
                         aria-label="Search">
                     <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
                 </form>
@@ -18,7 +19,7 @@
     </div>
 </p>
 <!-- <input type="search"> -->
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <div class="row row-cols-lg-3 mt-4 row-cols-md-2 row-cols-sm-1">
 
             <% if(allData.length==0) {%>
                 <div class="card col" style="width: 20rem;"> 

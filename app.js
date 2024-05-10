@@ -80,7 +80,7 @@ app.use((req,res,next)=>{
     next();
 });
 app.get("/",(req,res,next)=>{
-    res.redirect("/blog");
+    res.render("./listings/index.ejs");
 })
 app.use("/blog",blogRouter);
 app.use("/review",reviewRouter);

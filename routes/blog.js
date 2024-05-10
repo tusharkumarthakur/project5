@@ -52,6 +52,14 @@ router.post("/" ,isLoggedIn,upload.single("image"),validateBlog,wrapAsync(adding
 
 router.get("/view/:id",wrapAsync( showBlog));
 
+router.get("/privacy",(req,res)=>{
+    res.render("./listings/privacy.ejs");
+});
+
+router.get("/terms",(req,res)=>{
+    res.render("./listings/terms.ejs");
+});
+
 router.patch("/changeImage/:id",isLoggedIn,validUser,upload.single("image"),wrapAsync( changeImage));
 
 router.post("/like/:id",isLoggedIn,wrapAsync( likeBlog));
